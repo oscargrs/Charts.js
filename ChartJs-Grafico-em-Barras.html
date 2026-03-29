@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js 2</title>
+    <style>
+        * {font-family: Arial, Helvetica, sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>Atividade: Chart.js</h1>
+    <h2>Gráfico em Barras:</h2>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+            label: 'Temperatura Média',
+            data: [22, 24, 27, 23, 20, 18],
+            backgroundColor: ['#FB6582']
+        },
+        {
+            label: 'Umidade Média', 
+            data: [90, 89, 93, 87, 88, 82],
+            backgroundColor: ['#40A3E8']
+        }]
+        },
+        options: {
+        scales: {
+            y: {
+            beginAtZero: true
+            }
+        }
+        }
+    });
+    </script>
+</body>
+</html>
